@@ -9,6 +9,7 @@
         public $sumario;
         public $data;
         public $professor;
+		public $tempo;
     }
 
     class PlanoDeAulaEnviadoEvent extends Event {
@@ -29,9 +30,17 @@
         public function onPlanoDeAulaEnviado(Event $event) {
             echo "Sumário: ".$event->getAula()->sumario."\n";
             echo "Data: ".$event->getAula()->data."\n";
-            echo "Professor: ".$event->getAula()->professor; 
+            echo "Professor: ".$event->getAula()->professor."\n";
+			#echo "Tempo: ".$event->getAula()->tempo;
         }
     }
+	
+	#listener2
+	class SegundoListener {
+		public function onPlanoDeAulaEnviado(Event $event) {
+            echo "Tempo: ".$event->getAula()->tempo."\n"; 
+        }
+	}
 
     #Walter -> escreva um listener que imprime so o sumário e faça um pull request do código.
 
@@ -45,15 +54,19 @@
     $aula->sumario = "Introdução ao Symfony";
     $aula->data = "18/12/2020";
     $aula->professor = "Luís Tchitue";
+	$aula->tempo = "1ºtempo";
 
     $planoDeAula_evento = new PlanoDeAulaEnviadoEvent($aula);
 
     $dispatcher = new EventDispatcher();
     $listener = new PrimeiroListener();
+	$listenerDois = new SegundoListener();
 
     #regista um listener no dispatcher
     $dispatcher
         ->addListener(PlanoDeAulaEnviadoEvent::NOME_DO_EVENTO, [$listener, 'onPlanoDeAulaEnviado']);    
+	$dispatcher
+		->addListener(PlanoDeAulaEnviadoEvent::NOME_DO_EVENTO, [$listenerDois, 'onPlanoDeAulaEnviado']);  
 
 
     # propaga os eventos para todos os listeners registados no dispatcher
