@@ -1,0 +1,33 @@
+----- OBS: Use $GET_['nome_da_variavel'] para obter dados do usuário. -----
+
+1# :
+Escreva um script que recebe o ano de nascimento de uma pessoa e imprime 
+a sua idade. (use variaveis)
+
+#2 : 
+Escreva um script que imprime a soma dos números no intervalo [1-10]. (use loops)
+Resolva este exercício, utilizando todas as estruturas de repetição.
+
+#3 :
+Escreva um script que calcule a área de um quadrado, em seguida mostre o 
+dobro desta área para o usuário (use operadores e funções)
+
+#4 : 
+Escreva um script que armazena uma constante, e utilize esta constante 
+em três diferentes funções durante o script (use constantes e funções)
+
+#5 :
+Escreva um script que peça 2 números inteiros e um número real. Calcule e mostre:
+    1 - o produto do dobro do primeiro com a metade do segundo .
+    2 - a soma do triplo do primeiro com o terceiro.
+    3 - o terceiro elevado ao cubo.
+(use operadores)
+
+#6 :
+Faça um script que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps), 
+calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).
+(use round para aproximar a um número inteiro)
+
+#7 : 
+3. Faça um script em PHP que leia três números inteiros e mostre eles na ordem crescente.
+(use -if)
